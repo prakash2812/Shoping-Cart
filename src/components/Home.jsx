@@ -1,21 +1,17 @@
 import React from 'react';
-import CartState from '../context/context';
+import { CartState } from '../context/GlobalContext';
+import SingleProduct from './SingleProduct';
 const Home = () => {
-  console.log('data got', CartState());
-  /*  const {
+    const {
         state: { products },
-    } = contextData(); */
-  return (
-    <div>
-      {/* {products.map((product) => {
-                return (
-                    <div key={product.id}>
-                        <h1>{product.name}</h1>
-                    </div>
-                );
-            })} */}
-    </div>
-  );
+    } = CartState();
+    return (
+        <div>
+            {products.map((product) => {
+                return <SingleProduct product={product} />;
+            })}
+        </div>
+    );
 };
 
 export default Home;
