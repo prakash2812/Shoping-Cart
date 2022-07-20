@@ -3,7 +3,7 @@ import { faker } from '@faker-js/faker';
 import { cartReducer } from './Reducers';
 const CartContext = createContext();
 export const CartState = () => useContext(CartContext);
-const GlobalContext = ({ children }) => {
+const CartProvider = ({ children }) => {
   const [cart, setCart] = useState([]);
   const products = [...Array(20)].map(() => ({
     id: faker.datatype.uuid(),
@@ -25,4 +25,4 @@ const GlobalContext = ({ children }) => {
   );
 };
 
-export default GlobalContext;
+export default CartProvider;

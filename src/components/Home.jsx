@@ -1,5 +1,5 @@
 import React from 'react';
-import CartState from '../context/GlobalContext';
+import CartState from '../context/context';
 const Home = () => {
   console.log('data got', CartState());
   /*  const {
